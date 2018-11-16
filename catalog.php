@@ -12,12 +12,12 @@
       if(mysqli_num_rows($result) > 0){
       	while($row = mysqli_fetch_assoc($result)){
       		echo "
-      		<div class='col-lg-4'>
-      			<div class='card h-100 mt-3 mb-3'>
+      		<div class='col-lg-3 mb-3 mt-3'>
+      			<div class='card h-100 mt-3 mb-3 text-center'>
       				<img src='$row[img_path]'>
 	  					<div class='card-body'>
 	  						<h4 class='card-title'>$row[name]</h4>
-	  						<h5>$row[price]</h5>
+	  						<h5>&#8369;$row[price]</h5>
 	  						<p class='card-text'>
 	  							$row[description]
 	  						</p>	
@@ -38,4 +38,4 @@
     <!-- /.container -->
 
    <!-- Footer -->
-    <?php //include "partials/footer.php" ;?>
+    <?php include "partials/footer.php" ;?>
