@@ -17,7 +17,7 @@
       <?php 
 
       require "controllers/connect.php";
-      $sql = "SELECT * FROM tbl_items";
+      $sql = "SELECT * FROM tbl_items LIMIT 4";
       $result = mysqli_query($conn,$sql);
 
       if(mysqli_num_rows($result) > 0){
