@@ -1,10 +1,29 @@
 <?php include "partials/header.php";?>
 
+	<!-- <form class="form-block my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>	 -->
+    <!-- <div class="container">
+    	<div class="row">
+    		<div class="col-lg-3"></div>
+    		<div class="col-lg-9">
+    			<div class="search-container">
+	    			<form class="form-block mt-3 mb-3" action="#">
+				      <input class="form-control mr-sm-2" type="search" type="text" placeholder="Search.." name="search" aria-label="Search"> -->
+				      <!-- <button type="submit"><i class="btn btn-outline-success my-2 my-sm-0"></i></button> -->
+				      <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+		    		<!-- </form>
+		    	</div>	
+    		</div>
+    	</div>
+    </div> -->
+       
 	 <!-- Page Content -->
     <div class="container">
 	    <div class="row">
 	    	<div class="col-lg-3">
-	    		<h1>Categories</h1>
+	    		<h5>Categories</h5>
 	    		<div class="list-group">
 	    		<?php 
 	    			require "controllers/connect.php";
@@ -19,10 +38,16 @@
 				      	}
 				      }	
 	    		 ?>
-	    			<!-- <a href="#" class="list-group-item">Category 1</a>
-	    			<a href="#" class="list-group-item">Category 2</a>
-	    			<a href="#" class="list-group-item">Category 3</a> -->
 	    		</div>
+	    		<h5 class="mt-3">Price</h5>
+		    		<div class="dropdown">
+					  <button class="btn bg-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  -----------------------------------------</button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					    <a class="dropdown-item" href="#">Highest to Lowest</a>
+					    <a class="dropdown-item" href="#">Lowest to Highest</a>
+					  </div>
+					</div>
 	    	</div>
 	    	<div class="col-lg-9">
 	    		<!-- <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -32,6 +57,14 @@
 	    				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 	    			</ol>
 	    		</div> -->
+	    		<div class="input-group mt-3">
+				    <input type="text" class="form-control" id="search" placeholder="Search...">
+				    <div class="input-group-append">
+				      <button class="btn btn-secondary" type="button">
+				        <i class="fas fa-search"></i>
+				      </button>
+				    </div>
+			  	</div>
 	    		<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -93,7 +126,6 @@
 	    	</div>
 	    </div>	
 	<!-- /.row -->
-
 	</div>
 	<!-- /.container     -->
 
@@ -101,8 +133,9 @@
 <?php 
 include "partials/footer.php"
  ;?>
+
  <script type="text/javascript">function showCategories(category_id){
- 	alert(category_id);
+ 	// alert(category_id);
  	$.ajax({
  		url : "controllers/show_items.php",
  		method : "POST",
@@ -116,3 +149,25 @@ include "partials/footer.php"
  	})
  }
  </script>
+
+ <script type="text/javascript">
+	$("#search").keyup(function(){
+		let word = $(this).val();
+		// console.log(word);
+		//AJAX Request
+		$.post("controllers/search_result.php",{word:word},function(data){
+				$("#products").html(data);
+		})
+	});
+</script>
+
+
+
+<!-- $(document).ready(()=>{
+  		$('#input').keypress((e)=>{
+  			if(e.which == 13){
+  			let input = $('#input').val();
+  			alert(input);
+  			}
+  		});
+  	}); -->
