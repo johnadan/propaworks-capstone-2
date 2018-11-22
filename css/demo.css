@@ -8,6 +8,19 @@ body {
   padding-top: 54px;
 }
 
+/*#register {
+  height: 100vh;
+}*/
+
+/*footer {
+  position: absolute;
+}*/
+
+/*#downdrop {
+    width: 100%;
+    min-width: inherit;
+}*/
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;

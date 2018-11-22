@@ -1,4 +1,5 @@
 <?php include "partials/header.php";?>
+<?php require_once "controllers/connect.php" ?>
 
 
     <!-- Page Content -->

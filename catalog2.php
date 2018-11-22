@@ -1,4 +1,5 @@
 <?php include "partials/header.php";?>
+<!-- header and navbar -->
 
 	<!-- <form class="form-block my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -20,10 +21,10 @@
     </div> -->
        
 	 <!-- Page Content -->
-    <div class="container">
+    <div class="container pt-3">
 	    <div class="row">
 	    	<div class="col-lg-3">
-	    		<h5>Categories</h5>
+	    		<h5 class="mt-5">Categories</h5>
 	    		<div class="list-group">
 	    		<?php 
 	    			require "controllers/connect.php";
@@ -57,7 +58,7 @@
 	    				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 	    			</ol>
 	    		</div> -->
-	    		<div class="input-group mt-3">
+	    		<div class="input-group mt-5 mb-3">
 				    <input type="text" class="form-control" id="search" placeholder="Search...">
 				    <div class="input-group-append">
 				      <button class="btn btn-secondary" type="button">
