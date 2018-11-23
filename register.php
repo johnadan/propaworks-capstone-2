@@ -8,7 +8,7 @@
 			<div class="form-group">
 			    <label for="exampleInputUsername">Username</label>
 			    <input type="text" class="form-control" id="username" name="uname" placeholder="Enter Username">
-			    <p class="validation"></p>
+			    <!-- <p class="validation"></p> -->
 			    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 			 </div>	
 			 <!-- <div class="form-group">
@@ -28,17 +28,19 @@
 			    <label for="exampleInputEmail1">Email address</label>
 			    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
 			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			    <p class="validation"></p>
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Password</label>
 			    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-			    <p class="validation"></p>
+			    <!-- <p class="validation"></p> -->
 			  </div>
 			  <!-- <div class="form-group form-check">
 			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
 			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
 			  </div> -->
-			  <p id="error_message"></p>
+			  <p id="error_message" name="errorMessage"></p>
+			  
 			  <div class="form-group text-center">
 			  	<button type="submit" id="btn_register" class="btn btn-primary">Register</button>
 			  </div>

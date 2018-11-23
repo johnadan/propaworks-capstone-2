@@ -40,15 +40,28 @@
 				      }	
 	    		 ?>
 	    		</div>
-	    		<h5 class="mt-3">Price</h5>
-		    		<div class="dropdown">
-					  <button class="btn bg-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  -----------------------------------------</button>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					    <a class="dropdown-item" href="#">Highest to Lowest</a>
-					    <a class="dropdown-item" href="#">Lowest to Highest</a>
-					  </div>
-					</div>
+	    		<!-- <form method="GET" action="sort_price.php">
+	    			<div class="form-group">
+		    			<h5 class="mt-3">Price</h5>
+			    		<div class="dropdown">
+						  <button class="btn bg-light dropdown-toggle" name="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						    <a class="dropdown-item" id="desc" href="#">Highest to Lowest</a>
+						    <a class="dropdown-item" id="asc" href="#">Lowest to Highest</a>
+						  </div>
+						</div>
+		    		</div>
+	    		</form> -->
+		    		<form method="GET" action="sort_price.php">
+				    <div class="form-group">
+				      <label for="price">Sort by Price</label>
+				      <select class="form-control" id="price" name="price">
+				        <option value="1">Highest to Lowest</option>
+				        <option value="2">Lowest to Highest</option>
+				      </select>
+				    </div>
+				 </form>
 	    	</div>
 	    	<div class="col-lg-9">
 	    		<!-- <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -151,6 +164,22 @@ include "partials/footer.php"
  }
  </script>
 
+ <script type="text/javascript">function sortPrice(price){
+ 	// alert(category_id);
+ 	$.ajax({
+ 		url : "controllers/sort_price.php",
+ 		method : "GET",
+ 		data: {
+ 			price : price
+ 		},
+ 		dataType: "text",
+ 		success : function(data){
+ 			$("#products").html(data)
+ 		}
+ 	})
+ }
+ </script>
+
  <script type="text/javascript">
 	$("#search").keyup(function(){
 		let word = $(this).val();
@@ -161,14 +190,3 @@ include "partials/footer.php"
 		})
 	});
 </script>
-
-
-
-<!-- $(document).ready(()=>{
-  		$('#input').keypress((e)=>{
-  			if(e.which == 13){
-  			let input = $('#input').val();
-  			alert(input);
-  			}
-  		});
-  	}); -->
