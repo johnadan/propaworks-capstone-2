@@ -11,15 +11,6 @@
 			    <!-- <p class="validation"></p> -->
 			    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 			 </div>	
-			 <!-- <div class="form-group">
-			    <label for="exampleInputLastName">Last Name</label>
-			    <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter Last Name">
-			 </div>	 -->
-			 <!-- <div class="form-group">
-			 	<textarea for="exampleInputAddress">
-				    <input type="text" class="form-control" id="exampleInputAddress" placeholder="Enter Address">
-			 	</textarea>
-			 </div>	 -->
 			 <div class="form-group">
 			    <label for="exampleFormControlTextarea1">Address</label>
 			    <textarea class="form-control" name="address" id="address" rows="3" placeholder="Enter Address"></textarea>
@@ -35,10 +26,7 @@
 			    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
 			    <!-- <p class="validation"></p> -->
 			  </div>
-			  <!-- <div class="form-group form-check">
-			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-			  </div> -->
+			 
 			  <p id="error_message" name="errorMessage"></p>
 			  
 			  <div class="form-group text-center">

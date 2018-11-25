@@ -1,25 +1,6 @@
 <?php include "partials/header.php";?>
 <!-- header and navbar -->
-
-	<!-- <form class="form-block my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>	 -->
-    <!-- <div class="container">
-    	<div class="row">
-    		<div class="col-lg-3"></div>
-    		<div class="col-lg-9">
-    			<div class="search-container">
-	    			<form class="form-block mt-3 mb-3" action="#">
-				      <input class="form-control mr-sm-2" type="search" type="text" placeholder="Search.." name="search" aria-label="Search"> -->
-				      <!-- <button type="submit"><i class="btn btn-outline-success my-2 my-sm-0"></i></button> -->
-				      <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
-		    		<!-- </form>
-		    	</div>	
-    		</div>
-    	</div>
-    </div> -->
-       
+   
 	 <!-- Page Content -->
     <div class="container pt-3">
 	    <div class="row">
@@ -53,15 +34,17 @@
 						</div>
 		    		</div>
 	    		</form> -->
-		    		<form method="GET" action="sort_price.php">
-				    <div class="form-group">
-				      <label for="price">Sort by Price</label>
-				      <select class="form-control" id="price" name="price">
-				        <option value="1">Highest to Lowest</option>
-				        <option value="2">Lowest to Highest</option>
-				      </select>
-				    </div>
-				 </form>
+		    		<form method="POST" action="sort_price.php">
+					    <div class="form-group">
+					      <label for="price">Sort by Price</label>
+					      	<select class="custom-select">
+								<option selected="" name="price" id="price">------</option>
+								<option value="desc">Highest to Lowest</option>
+								<option value="asc">Lowest to Highest</option>
+							</select>
+					    </div>
+					 </form>
+
 	    	</div>
 	    	<div class="col-lg-9">
 	    		<!-- <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -148,6 +131,7 @@
 include "partials/footer.php"
  ;?>
 
+<!-- show categories -->
  <script type="text/javascript">function showCategories(category_id){
  	// alert(category_id);
  	$.ajax({
@@ -164,11 +148,12 @@ include "partials/footer.php"
  }
  </script>
 
- <script type="text/javascript">function sortPrice(price){
+<!-- sort price -->
+ <!-- <script type="text/javascript">function sortPrice(price){
  	// alert(category_id);
  	$.ajax({
  		url : "controllers/sort_price.php",
- 		method : "GET",
+ 		method : "POST",
  		data: {
  			price : price
  		},
@@ -178,14 +163,26 @@ include "partials/footer.php"
  		}
  	})
  }
- </script>
+ </script> -->
 
+<!-- search bar -->
  <script type="text/javascript">
 	$("#search").keyup(function(){
 		let word = $(this).val();
 		// console.log(word);
 		//AJAX Request
 		$.post("controllers/search_result.php",{word:word},function(data){
+				$("#products").html(data);
+		})
+	});
+</script>
+
+<!-- sort price -->
+<script type="text/javascript">
+	$("#price").change(function(){
+		let sort = $(this).val();
+		console.log(sort);
+		$.post("controllers/sort_price.php",{price:price},function(data){
 				$("#products").html(data);
 		})
 	});

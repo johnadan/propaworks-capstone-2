@@ -2,14 +2,14 @@
 
 	require_once 'connect.php';
 
+	$option = $_POST['price'];
+
 	$data = "";
 
-	$option = $_GET['price'];
-
-	if($option == 1){
+	if($option value == "desc"){
 		$sql = "SELECT * FROM tbl_items ORDER BY DESC";
 	} 
-	if($option == 2){
+	if($option value == "asc"){
 		$sql = "SELECT * FROM tbl_items ORDER BY ASC";
 	} 
 
