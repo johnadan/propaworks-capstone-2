@@ -5,7 +5,8 @@
 	$username = $_POST['uname'];
 	$address = $_POST['address'];
 	$email = $_POST['email'];
-	$password = sha1($_POST['password']);
+	$password = $_POST['password'];
+	// $password = sha1($_POST['password']);
 
 	// $data = 
 

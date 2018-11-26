@@ -1,7 +1,11 @@
+<?php 
+// session_start(); ?>
+
 <?php include "partials/header.php";?>
+<?php include "partials/navbar.php";?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
       <?php 
 
