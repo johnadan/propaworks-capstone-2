@@ -1,9 +1,10 @@
-<?php session_start(); ?>
+<?php 
+// session_start(); ?>
 
 <?php include "../partials/header.php";?>
 <?php include "../partials/navbar.php";?>
 
-<?php require_once "controllers/connect.php" ?>
+<?php require_once "../controllers/connect.php" ?>
 
 
     <!-- Page Content -->
@@ -21,7 +22,7 @@
       <!-- <div class="row"> -->
       <?php 
 
-      require "controllers/connect.php";
+      require "../controllers/connect.php";
       $sql = "SELECT * FROM tbl_items LIMIT 4";
       $result = mysqli_query($conn,$sql);
 

@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 
-<?php require_once '../controllers/connect.php'; 
+<?php require_once 'controllers/connect.php'; 
 
 	$email = $_POST['email'];
 	$password = $_POST['password'];
