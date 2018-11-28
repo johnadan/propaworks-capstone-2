@@ -51,6 +51,10 @@ if(mysqli_num_rows($result) > 0){
 </body>
 </html>  
 
+<script type="text/javascript">
+  // var productId = $(this)
+</script>
+
 <script>
 $("button#addToCart").on("click",function(){
 	// $("#addToCart").on("click",function(){
