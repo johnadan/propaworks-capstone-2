@@ -10,8 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <p><a href="cart.php"></a></p>
-
+  <p><a href="cart.php">Cart</a></p>
+  <p><a href="destroy_session.php">Destroy Session</a></p>
 <?php
 //Database Info
 $servername = "localhost";

@@ -43,12 +43,12 @@ foreach($_SESSION['cart'] as $id=> $quantity) {
                        $grand_total += $subTotal;
 
                        $data .=
-                         "<tr>
+                         "<tr id='cartItems'>
                              <td><img src='$row[img_path]' width='25%' height='25%'></td>
-                             <td id='price$id'> &#8369;$price</td>
+                            <td id='price$id'>$price</td>
                              <td><input type='number' class ='form-control' value = '$quantity' id='quantity$id'  min='1' size='5' onchange=changeNoItems($id)></td>
                              <td class='sub-total' id='subTotal$id'>$subTotal</td>
-                             <td><button class='btn btn-danger'>Remove</button></td>
+                             <td><button class='btn btn-danger' id='btnRemove' onclick=removeFromCart($id)>Remove</button></td>
                          </tr>";
                    }
                }
