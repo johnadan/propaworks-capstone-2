@@ -1,19 +1,7 @@
 <?php session_start(); ?>
 
-<?php
-//Database Info
-$servername = "localhost";
-$username = "root";
-$pw = "";
-$dbname = "demoStoreNew";
+<?php require_once 'connect.php' ?>
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $pw, $dbname);
-// Check connection
-if (!$conn) {
-   die("Connection failed: " . mysqli_connect_error());
-}
-?>
 <?php
 $data ='
          <table class="table table-hover">
@@ -56,7 +44,7 @@ foreach($_SESSION['cart'] as $id=> $quantity) {
 
 $data .="</tbody></table>
              <hr>
-             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br><button class='btn btn-success'><a href='checkout.php'>Check Out</a></button></h3>
+             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br><button class='btn btn-success'><a href='../views/checkout.php'>Check Out</a></button></h3>
              <hr>";
 echo $data;
 ?>

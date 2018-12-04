@@ -10,6 +10,8 @@
     <div class="container pt-3">
 	    <div class="row">
 	    	<div class="col-lg-3">
+	    		<p><a href="cart.php">Cart</a></p>
+  				<p><a href="../controllers/destroy_session.php">Destroy Session</a></p>
 	    		<h5 class="mt-5">Categories</h5>
 	    		<div class="list-group">
 	    		<?php 
@@ -204,7 +206,7 @@ $("button#addToCart").on("click",function(){
 	console.log("Product Id:" + productId);
 	console.log("Quantity:" + quantity);
 	$.ajax({
-		url:"addToCart.php",
+		url:"../controllers/addToCart.php",
 		method:"POST",
 		data:
 		{
@@ -218,4 +220,53 @@ $("button#addToCart").on("click",function(){
 	})
 })			
 
+</script>
+
+<script type="text/javascript">
+	function loadCart(){
+	$.get("loadCart.php",function(data){
+		$("#loadCart").html(data);
+	});
+}
+
+$(document).ready(function(){
+	loadCart();
+});
+
+function changeNoItems(id){
+	let items = $("#quantity" + id).val();
+	console.log(items);
+	let price = $("#price" + id).text();
+	console.log(price);
+	let newPrice = items * price;
+	$("#subTotal" + id).html(newPrice);
+	console.log("Sub Total is: " + newPrice);
+
+	let grandTotal = 0;
+	$('.sub-total').each(function(){
+		grandTotal += parseFloat($(this).text());
+	});
+	$("#grandTotal").html(grandTotal);
+
+}
+
+function removeFromCart(id){
+	var answer = confirm("Remove item from cart?");
+	if(answer){
+		// alert("You answered Yes");
+		$.ajax({
+			url:"removeFromCart.php",
+			method:"POST",
+			data:
+			{
+				productId:id
+			},
+			dataType:"text",
+			success:function(data){
+				$('a[href="cart.php"]').html(data);
+				loadCart();
+			}
+		});
+	}
+}
 </script>
