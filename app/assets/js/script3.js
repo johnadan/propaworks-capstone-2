@@ -1,5 +1,5 @@
 function loadCart(){
-	$.get("loadCart.php",function(data){
+	$.get("../controllers/loadCart.php",function(data){
 		$("#loadCart").html(data);
 		// alert("hello");
 	});
@@ -31,7 +31,7 @@ function removeFromCart(id){
 	if(answer){
 		// alert("You answered Yes");
 		$.ajax({
-			url:"../../controllers/removeFromCart.php",
+			url:"../controllers/removeFromCart.php",
 			method:"POST",
 			data:
 			{
@@ -39,7 +39,7 @@ function removeFromCart(id){
 			},
 			dataType:"text",
 			success:function(data){
-				$('a[href="../../views/cart.php"]').html(data);
+				$('a[href="../views/cart.php"]').html(data);
 				loadCart();
 			}
 		});

@@ -22,21 +22,4 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   </head>
-   <body>
-   <hr>
-     <p align="center">
-       <a href="index.php">Landing Page</a> |
-       <a href="home.php">Home</a> |
-       <a href="login.php">Login</a> 
-       <?php 
-
-       if(isset($_SESSION['email'])){
-        echo "<a href='logout.php'>Log Out</a>";
-       }
-       else {
-        echo "<a href='login.php'>Login</a>";
-       }
-
-        ?>
-     </p>
-   <hr>
+   

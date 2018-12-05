@@ -10,7 +10,7 @@
     <div class="container pt-3">
 	    <div class="row">
 	    	<div class="col-lg-3">
-	    		<p><a href="cart.php">Cart</a></p>
+	    		<!-- <p><a href="cart.php">Cart</a></p> -->
   				<p><a href="../controllers/destroy_session.php">Destroy Session</a></p>
 	    		<h5 class="mt-5">Categories</h5>
 	    		<div class="list-group">
@@ -215,7 +215,7 @@ $("button#addToCart").on("click",function(){
 		},
 		dataType:"text",
 		success:function(data){
-			$('a[href="cart.php"]').html(data);
+			$('a[href="../views/cart.php"]').html(data);
 		}
 	})
 })			
