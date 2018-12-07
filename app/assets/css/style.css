@@ -2,13 +2,22 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	color: white;
+	/*color: white;*/
 }
 
-.button {
+/*.button {
 	color: #cc0000;
+}*/
+
+.carousel-item {
+	width: 0 auto;
+    height: 0 auto;
 }
 
+#slide1, #slide2, #slide3, #slide4, #slide5, #slide6 {
+	height: 75vh;
+    width: 100%;
+}
 /*.navbar {
 	width: 100%;
 	z-index: 1;

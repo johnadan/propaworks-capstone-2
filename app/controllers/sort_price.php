@@ -31,7 +31,7 @@
 					  					</div>
 					  					<div class='card-footer'>
 					  						<input type='number' class='form-control mb-3'>
-					  						<button class='btn btn-block btn-primary'>Add to Cart</button>
+					  						<button class='btn btn-block btn-primary' id='addToCart'>Add to Cart</button>
 					  					</div>		
 				      			</div>	
 				      		</div>";
