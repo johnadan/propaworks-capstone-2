@@ -34,49 +34,6 @@
 				  </div>
 			</form>
 			<h1 class="text-center">Order Summary</h1>
-			<!-- <form class="mt-5 mb-3" action="login_user.php" method="POST">
-				<h5 class="text-center">LOG IN</h5>
-			  <div class="form-group">
-			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-			    <p class="validation"></p>
-			  </div>
-			  <div class="form-group">
-			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-			  </div>
-			 
-			  <p id="error_message" name="errorMessage"></p>
-			  
-			  <div class="form-group text-center">
-			  	<button type="submit" id="btn_login" class="btn btn-primary">Log In</button>
-			  </div>
-			</form> -->
-			
-			<!-- <div class="card">
-    		<div class="card-header">Log In</div>
-    		<div class="card-body">
-    			<form action="login_user.php" method="POST">
-    				<div class="form-group">
-    					<label>Email</label>
-    					<input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
-                        <p class="validation"></p>
-    				</div>
-    				<div class="form-group">
-    					<label>Password</label>
-    					<input type="password" class="form-control" id="password" name="password">
-                        <p class="validation"></p>
-    				</div>
-
-                    <p id="error_message" name="errorMessage"></p>
-                    
-    				<! <button id="btn_login" class="btn btn-success" type="button">SUBMIT</button> -->
-    				<!-- <button type="submit" id="btn_login" class="btn btn-primary">Log In</button>
-    				<button type="submit" id="btn_register" class="btn btn-secondary">Register</button>
-    				<input class="btn btn-warning" type="reset" value="CLEAR">
-    			</form> -->
-    		<!-- </div> --> 
 			    		<?php require_once '../controllers/connect.php' ?>
 
 			<?php
@@ -120,12 +77,38 @@
 
 			$data .="</tbody></table>
 			             <hr>
-			             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br><form><div class='form-group text-center'><button class='btn btn-success'><a href='place_order.php'>Place Order</a></button></h3></div></form>
+			             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br><form><div class='form-group text-center'><button class='btn btn-success' id='place_order' onclick=generate_trans_number()><a href='place_order.php'>Place Order</a></button></h3></div></form>
 			             <hr>";
 			echo $data;
 			?>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+document.ready(()=>{
+	$("#place_order").click(() =>{
+		function generate_trans_number(){
+ $ref_number = '';
+ $source = array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+  
+  for($i=0; $i < 36; $i++){
+     $index = rand(0,35);
+     $ref_number = $ref_number.$source[$index];
+    }
+  $today = getdate();
+  return $ref_number."-".$today[0];
+}
+alert($ref_number.$today);
+//call the function and echo
+//echo generate_trans_number();
+//echo "<br>";
+//echo date ("Y-m-d G:i:s"); //Date function in PHP
+
+	});
+});
+
+generate_trans_number();
+</script>	
 
 <?php require_once "../partials/footer.php" ?>	
