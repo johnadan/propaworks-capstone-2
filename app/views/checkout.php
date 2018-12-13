@@ -85,5 +85,19 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+	function generate_code() {
+$ref_number = '';
+ $source = array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+  
+  for($i=0; $i < 36; $i++){
+     $index = rand(0,35);
+     $ref_number = $ref_number.$source[$index];
+    }
+  $today = getdate();
+  echo $ref_number."-".$today[0];
+}
+</script>
+
 
 <?php require_once "../partials/footer.php" ?>	

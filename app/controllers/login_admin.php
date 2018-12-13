@@ -2,8 +2,8 @@
 
 <?php require_once 'controllers/connect.php'; 
 
-	$email = $_POST['email'];
-	$password = sha1($_POST['password']);
+	$email = $_POST['admin_email'];
+	$password = $_POST['pw'];
 	//$user_id = $_SESSION['user_id'];
 
 	$sql = "SELECT * FROM tbl_users WHERE email = '$email' AND pw = '$password' AND id = '$user_id'";
@@ -16,14 +16,13 @@
 
 	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
-			$_SESSION['id'] = $row["id"];
 			$_SESSION['email'] = $row["email"];
-			//$_SESSION['user_id'] = $row["user_id"];
+			$_SESSION['user_id'] = $row["user_id"];
 
 			// $_SESSION['email'] = $row["firstname"];
 			// $_SESSION['email'] = $row["lastname"];
 		}
-		header("Location: catalog2.php");
+		header("Location: add_item.php");
 	}
 
 	// if($count == 1){
