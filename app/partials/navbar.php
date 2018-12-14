@@ -23,10 +23,19 @@
             <li class="nav-item">
               <a class="nav-link" href="../views/cart.php"><i class="fas fa-shopping-cart"> Cart</i></a>
             </li>
-              <li class="nav-item">
-              <a class="nav-link" href="../views/login.php"><i class="fas fa-user"> Sign Out</i></a>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="../views/login.php"><i class="fas fa-user"> Log In</i></a> -->
+              <?php
+  if(isset($_SESSION['email'])){
+    echo "<a class='nav-link' href='../views/logout.php'><i class='fas fa-user'>Log Out</i></a>";
+  }else{
+    echo"<a class='nav-link' href='../views/login.php'><i class='fas fa-user'> Log In</i></a>";
+  }
+?>  
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+  

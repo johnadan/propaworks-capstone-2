@@ -1,17 +1,17 @@
   <body>
    <hr>
      <p align="center">
-       <a href="index.php">Landing Page</a> |
-       <a href="home.php">Home</a> |
+       <!-- <a href="index.php">Landing Page</a> |
+       <a href="home.php">Home</a> | -->
        <!-- <a href="login.php">Login</a>  -->
        <?php 
 
-       if(isset($_SESSION['email'])){
-        echo "<a href='logout.php'>Log Out</a>";
-       }
-       else {
-        echo "<a href='login.php'>Login</a>";
-       }
+       // if(isset($_SESSION['email'])){
+       //  echo "<a href='logout.php'>Log Out</a>";
+       // }
+       // else {
+       //  echo "<a href='login.php'>Login</a>";
+       // }
 
         ?>
      </p>
