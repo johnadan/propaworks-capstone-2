@@ -1,9 +1,8 @@
 <?php session_start(); ?>
 
 <?php
-	require_once 'controllers/connect.php';
-
-
+	require_once 'connect.php';
+	$userID = $_POST['id'];
 	$username = $_POST['uname'];
 	$address = $_POST['address'];
 	$email = $_POST['email'];
@@ -22,13 +21,14 @@
 	$result = mysqli_query($conn, $sql);
 
 	if(mysqli_num_rows($result) > 0){
-		$data = "Email is already used";
+		$data = "Sorry, email already exists. Please use a different email.";
 	}
 	else {
-		$sql2 = "INSERT INTO tbl_users (uname,email,address,pw)
+		$sql2 = "INSERT INTO tbl_users (username,email,address,password)
 		VALUES ('$username','$email','$address','$password')";
 		mysqli_query($conn,$sql2);
-		$data = "Successfully registered!";
+		// $data = "You have successfully registered!";
+		header("Location: ../views/index.php");
 	}
 	echo $data;
 	

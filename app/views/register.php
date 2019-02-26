@@ -4,7 +4,7 @@
 	<div class="row mt-5">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
-			<form class="mt-5 mb-3" action="register_user.php" method="POST">
+			<form class="mt-5 mb-3" action="../controllers/register_user.php" method="POST">
 			<h5 class="text-center">REGISTER</h5>
 			<div class="form-group">
 			    <label for="exampleInputUsername">Username</label>

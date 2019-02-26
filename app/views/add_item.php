@@ -4,24 +4,27 @@
 	<div class="row">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
-			<form class="mt-3"><h5>Add Catalog Item</h5>
+			<form class="mt-3" action="item_add.php" method="POST"><h5>Add Catalog Product/Item</h5>
 			  <div class="form-group">
 			    <label for="exampleFormControlInput1">Name</label>
-			    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product/Item Name">
+			    <input type="text" class="form-control" id="item_name" name="product_name" placeholder="Product/Item Name">
 			  </div>
 			  <div class="form-group">
-			    <label for="exampleFormControlSelect1">Category</label>
-			    <select class="form-control" id="exampleFormControlSelect1">
-			      <option>Tees</option>
-			      <option>Collared Shirts</option>
-			      <option>Hoodies and Longsleeves</option>
-			      <option>Lanyard</option>
-			      <option>Artists and Bands</option>
+			    <label for="ProductItemCategory">Product/Item Category</label>
+			    <select class="form-control" id="category_selection" name="category_selection">
+			      <option value="1">Campus Tees</option>
+			      <option value="2">Collared Shirts</option>
+			      <option value="3">Hoodies and Raglans</option>
+			      <!-- <option>Lanyard</option> -->
+			      <option value="4">Artists, Bands, and others</option>
 			    </select>
 			  </div>
 			  <div class="form-group">
-			    <label for="exampleFormControlInput2">Price</label>
-			    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="eg. &#8369;60.00">
+			    <label for="ProductItemPrice">Price</label>
+			    <input type="text" class="form-control" id="product_price" name="item_price" placeholder="eg. &#8369;60.00">
+			    <label for="desc">Description</label>
+			   <!--  <input type="text" class="form-control" id=7"777777"  placeholder="7"> -->
+			     <textarea class="form-control" id="item_desc" name="product_desc" placeholder="eg. UP-inspired campus tee" rows="5"></textarea>
 			  </div>
 			  <!-- <div class="form-group">
 			    <label for="exampleFormControlInput3">Description</label>
@@ -41,10 +44,7 @@
 			      <option>5</option>
 			    </select>
 			  </div> -->
-			  <div class="form-group">
-			    <label for="exampleFormControlTextarea1">Description</label>
-			    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Product/Item Description" rows="5"></textarea>
-			  </div>
+			  <!-- 7 -->
 			  <!-- <button type="submit" class="btn btn-primary mb-3">Submit</button> -->
 			  <form action="#">
 			  Image: <input type="file" name="myFile"><br><br>

@@ -1,60 +1,20 @@
-<?php 
-// session_start();
- ?>
-
 <?php include "../partials/header.php";?>
 <?php include "../partials/navbar.php";?>
 <!-- header and navbar -->
    
 	 <!-- Page Content -->
-    <div class="container-fluid pt-1">
-    	<div class="row">
-    		<!-- <div class="col-lg-1"></div> -->
-    		<div class="col-lg-12">
-    			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active">
-							<img id="slide1" class="d-block w-100% h-100% img-fluid" src="../assets/images/carousel/46174511_1937472813011511_7168301129988571136_n.jpg" alt="First slide">
-						</div>
-						<div class="carousel-item">
-							<img id="slide2" class="d-block w-100% h-100% img-fluid" src="../assets/images/carousel/42243638_1866153856810074_3832132497672503296_n.jpg" alt="Second slide">
-						</div>
-						<div class="carousel-item">
-							<img id="slide3" class="d-block w-100% h-100% img-fluid" src="../assets/images/carousel/42227407_1866153206810139_5952174126444576768_n.jpg" alt="Third slide">
-						</div>
-						<div class="carousel-item">
-							<img id="slide4" class="d-block w-100% h-100% img-fluid" src="../assets/images/carousel/37961326_1790637204361740_1520850371939926016_n.jpg" alt="Fourth slide">
-						</div>
-						<div class="carousel-item">
-							<img id="slide5" class="d-block w-100% h-100% img-fluid" src="../assets/images/carousel/23244226_1507034649388665_8269090395870314016_n.jpg" alt="Fifth slide">
-						</div>
-						<div class="carousel-item">
-							<img id="slide6" class="d-block w-100% h-100% img-fluid" src="../assets/images/carousel/10577130_920631761298824_3161296594274828325_n.jpg" alt="Sixth slide">
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-    		</div>
-    	</div>
+    <div class="container-fluid pt-2 mt-1">
+    	<!-- Jumbotron Header -->
+      <header class="jumbotron my-4 text-center pt-5 mt-5">
+        <h1 class="display-3">Propaworks</h1>
+        <p class="lead">Propaworks offers apparels such as PUP-inspired campus tees, raglans and hoodies, and music artists-insipired shirts. They also offer shirts, raglans, hoodies, mugs, and lanyard printing services.</p>
+        <button class="a_demo_two btn-shadow"><a href="#products">Go shopping!</button></a>
+      </header>
+
 	    <div class="row">
 	    	<div class="col-lg-3">
 	    		<!-- <p><a href="cart.php">Cart</a></p> -->
-  				<p><a href="../controllers/destroy_session.php">Destroy Session</a></p>
+  				<!--<p><a href="../controllers/destroy_session.php">Destroy Session</a></p>-->
 	    		<h5 class="mt-5">Categories</h5>
 	    		<div class="list-group">
 	    		<?php 
@@ -85,10 +45,10 @@
 		    		</div>
 	    		</form> -->
 		    		<form method="POST" action="../controllers/sort_price.php">
-					    <div class="form-group">
-					      <label for="price">Sort by Price</label>
+					    <div class="form-group mt-2">
+					      <!-- <label for="price">Sort by Price</label> -->
 					      	<select class="custom-select" name="price" id="price">
-								<option selected="">Sort by</option>
+								<option selected="">Sort by Price</option>
 								<option value="desc">Highest to Lowest</option>
 								<option value="asc">Lowest to Highest</option>
 							</select>
@@ -107,7 +67,7 @@
 	    		<div class="input-group mt-5 mb-3">
 				    <input type="text" class="form-control" id="search" placeholder="Search...">
 				    <div class="input-group-append">
-				      <button class="btn btn-secondary" type="button">
+				      <button class="a_demo_two" type="button">
 				        <i class="fas fa-search"></i>
 				      </button>
 				    </div>
@@ -125,7 +85,7 @@
 			      		echo "
 			      		<div class='col-md-4 mb-3 mt-3'>
 			      			<div class='card h-100 mt-3 mb-3 text-center'>
-			      				<img src='$row[img_path]'>
+			      				<img class='card-img-top' src='$row[img_path]'>
 				  					<div class='card-body'>
 				  						<a href='product.php?id=$row[id]'><h4 class='card-title'>$row[name]</h4></a>
 				  						<h5>&#8369;$row[price]</h5>
@@ -135,7 +95,7 @@
 				  					</div>
 				  					<div class='card-footer'>
 				  						<input type='number' class='form-control mb-3' min='1' value='1' id='quantity$row[id]'>
-				  						<button class='btn btn-block btn-primary' id='addToCart' data-id='$row[id]'><i class='fas fa-cart-plus'></i> Add to Cart</button>
+				  						<button class='a_demo_two btn-shadow btn-block' id='addToCart' data-id='$row[id]'><i class='fas fa-cart-plus'></i> Add to Cart</button>
 				  					</div>		
 			      			</div>	
 			      		</div>";
@@ -237,9 +197,9 @@ $("button#addToCart").on("click",function(){
 		}
 	})
 })			
-
 </script>
 
+<!-- Load Cart -->
 <script type="text/javascript">
 	function loadCart(){
 	$.get("loadCart.php",function(data){
@@ -251,6 +211,7 @@ $(document).ready(function(){
 	loadCart();
 });
 
+// add or subtract item quantity
 function changeNoItems(id){
 	let items = $("#quantity" + id).val();
 	console.log(items);

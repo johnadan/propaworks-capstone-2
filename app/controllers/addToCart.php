@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	session_start();
 
@@ -15,4 +15,4 @@
 	echo "<i class='fas fa-shopping-cart'></i> Cart
 	<span class='badge badge-primary'>". $_SESSION['item_count']."</span>";
 
- ?>
+?>

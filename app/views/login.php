@@ -27,7 +27,7 @@
 			<div class="card">
     		<div class="card-header">Log In</div>
     		<div class="card-body">
-    			<form action="login_user.php" method="POST">
+    			<form action="../controllers/login_user.php" method="POST">
     				<div class="form-group">
     					<label>Email</label>
     					<input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
@@ -42,9 +42,12 @@
                     <p id="error_message" name="errorMessage"></p>
                     
     				<!-- <button id="btn_login" class="btn btn-success" type="button">SUBMIT</button> -->
-    				<button type="submit" id="btn_login" class="btn btn-primary">Log In</button>
-    				<input class="btn btn-warning" type="reset" value="CLEAR">
+    				<button type="submit" id="btn_login" class="btn bg-primary">Log In</button>
     			</form>
+    			<br>
+    			<a href="register.php"><input class="btn btn-warning mb-3" type="reset" value="Sign Up"></a>
+    			<br>
+    			<input class="btn btn-warning" type="reset" value="Clear">
     		</div>
 
     	</div>

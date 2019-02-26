@@ -16,7 +16,7 @@ $(document).ready(()=>{
 			$("#username").next().html("");
 		}
 
-		if (password == ""){
+		if (password == "" || password == ''){
 			$("#password").next().css("color","red");
 			$("#password").next().html("Password is required!");
 			error_flag = 1;
@@ -88,11 +88,11 @@ $(document).ready(()=>{
 		if(error_flag == 0){
 			
 			$.ajax({
-				"url": "admin_login.php",
-				"data": {"admin_email" : admin_email,
+				"url": "login_admin.php",
+				"data": {"email" : email,
 						//"address" : address,
 						//"email" : email,
-						"pw": pw}
+						"password": password}
 				"type": "POST",
 				"success": (dataFromPHP) =>{
 					if(dataFromPHP == "Success"){

@@ -1,22 +1,20 @@
-<?php //session_start(); ?>
-
-<?php 
-//This page is not accessible if user is not logged in
-//if(!isset($_SESSION["email"])){
-  //header("Location: login.php");
-//}
- ?>
-
 <?php require_once "../partials/header.php" ?>
 
 <?php require_once "../partials/navbar.php" ?>
 
-<h1 class="text-center">Checkout</h1>
+<?php
+ob_start();
+if(!isset($_SESSION['email'])){
+echo "<script type='text/javascript'>location.href='login.php'</script>";
+}
+?>
+
+<h1 class="text-center mt-5 pt-5">Checkout</h1>
 
 <div class="container" id="register">
-	<div class="row mt-5">
-		<div class="col-lg-3"></div>
-		<div class="col-lg-6">
+	<div class="row mt-5 pt-5">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-10">
 			<form>
 				<div class="form-group">
 				    <label for="exampleFormControlInput1">Shipping Address</label>
@@ -61,14 +59,16 @@
 			                     $price = $row["price"];
 
 			                       //For computing the sub total and grand total
+			                     //$subTotal = $_SESSION["grandtotal"]['id'];
 			                       $subTotal = $quantity * $price;
+			                       //$grand_total = $row["grandtotal"];
 			                       $grand_total += $subTotal;
 
 			                       $data .=
 			                         "<tr id='cartItems'>
-			                             <td><img src='$row[img_path]' width='25%' height='25%'></td>
+			                             <td><img class='card-img-top' src='$row[img_path]' width='25%' height='25%'></td>
 			                            <td id='price$id'>$price</td>
-			                             <td><input type='number' class ='form-control' value = '$quantity' id='quantity$id'  min='1' size='5' onchange=changeNoItems($id)></td>
+			                             <td><input value = '$quantity' id='quantity$id'></td>
 			                             <td class='sub-total' id='subTotal$id'>$subTotal</td>
 			                         </tr>";
 			                   }
@@ -77,7 +77,7 @@
 
 			$data .="</tbody></table>
 			             <hr>
-			             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br><form><div class='form-group text-center'><button class='btn btn-success' id='place_order' onclick=generate_trans_number()><a href='place_order.php'>Place Order</a></button></h3></div></form>
+			             <h3 align='right'>Total: &#x20B1; <span id='grandTotal'>$grand_total </span><br><form><div class='form-group text-center'><button class='a_demo_two' id='place_order'><a href='../controllers/place_order.php'>Place Order</a></button></h3></div></form>
 			             <hr>";
 			echo $data;
 			?>
@@ -85,7 +85,7 @@
 	</div>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	function generate_code() {
 $ref_number = '';
  $source = array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
@@ -97,7 +97,26 @@ $ref_number = '';
   $today = getdate();
   echo $ref_number."-".$today[0];
 }
-</script>
+</script> -->
 
+<!-- <script type="text/javascript"> -->
+	<!-- // add or subtract item quantity -->
+<!-- function changeNoItems(id){
+	let items = $("#quantity" + id).val();
+	console.log(items);
+	let price = $("#price" + id).text();
+	console.log(price);
+	let newPrice = items * price;
+	$("#subTotal" + id).html(newPrice);
+	console.log("Sub Total is: " + newPrice);
 
-<?php require_once "../partials/footer.php" ?>	
+	let grandTotal = 0;
+	$('.sub-total').each(function(){
+		grandTotal += parseFloat($(this).text());
+	});
+	$("#grandTotal").html(grandTotal);
+
+}
+</script> -->
+
+<?php require_once "../partials/footer.php" ?>

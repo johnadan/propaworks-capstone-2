@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 	$host = "localhost";
 	$db_username = "root";  
 	$db_password = "";
-	$db_name = "demoStoreNew";
+	$db_name = "propaworks"; 
 
 	$conn = mysqli_connect($host, $db_username, $db_password, $db_name);
 
@@ -11,4 +11,4 @@
 		echo "Failed to connect to MYSQL:" . mysqli_connect_error();
 	}
 
- ?>
+?>

@@ -3,6 +3,41 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*color: white;*/
+}
+
+/*.breadcrumb {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}*/
+
+.breadcrumb .breadcrumb-item:nth-child(2)::before {
+  content: "|";
+}
+.breadcrumb .breadcrumb-item:nth-child(3)::before {
+  content: "|";
+}
+.breadcrumb .breadcrumb-item:nth-child(4)::before {
+  content: "|";
+}
+.breadcrumb .breadcrumb-item:nth-child(5)::before {
+  content: "|";
+}
+.button {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
 
 body {
   padding-top: 54px;

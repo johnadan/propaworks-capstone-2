@@ -20,7 +20,7 @@
       			<div class='card h-100 mt-3 mb-3 text-center'>
       				<img src='$row[img_path]'>
 	  					<div class='card-body'>
-	  						<h4 class='card-title'>$row[name]</h4>
+	  						<a href='product.php?id=$row[id]'><h4 class='card-title'>$row[name]</h4></a>
 	  						<h5>&#8369;$row[price]</h5>
 	  						<p class='card-text'>
 	  							$row[description]
@@ -28,7 +28,7 @@
 	  					</div>
 	  					<div class='card-footer'>
 	  						<input type='number' class='form-control mb-3'>
-	  						<button class='btn btn-block btn-primary'>Add to Cart</button>
+	  						<button class='a_demo_two' id='addToCart' data-id='$row[id]'><i class='fas fa-cart-plus'></i> Add to Cart</button>
 	  					</div>		
       			</div>	
       		</div>";
