@@ -42,12 +42,12 @@
                     <p id="error_message" name="errorMessage"></p>
                     
     				<!-- <button id="btn_login" class="btn btn-success" type="button">SUBMIT</button> -->
-    				<button type="submit" id="btn_login" class="btn bg-primary">Log In</button>
+    				<button type="submit" id="btn_login" class="a_demo_two btn-shadow">Log In</button>
     			</form>
     			<br>
-    			<a href="register.php"><input class="btn btn-warning mb-3" type="reset" value="Sign Up"></a>
+    			<a href="register.php"><input class="a_demo_two btn-shadow mb-3" type="reset" value="Sign Up"></a>
     			<br>
-    			<input class="btn btn-warning" type="reset" value="Clear">
+    			<input class="a_demo_two btn-shadow" type="reset" value="Clear">
     		</div>
 
     	</div>

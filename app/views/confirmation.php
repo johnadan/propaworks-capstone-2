@@ -1,49 +1,25 @@
-<?php 
-//app/sample_mail.php
-require '../../vendor/autoload.php';
+<?php require_once "../partials/header.php" ?>
 
-require '../../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '../../vendor/phpmailer/phpmailer/src/Exception.php';
-require '../../vendor/autoload.php';
-require '../controllers/place_order.php';
+<?php require_once "../partials/navbar.php" ?>
 
-require_once 'connect.php';
-// use PHPMailer\PHPMailer;
-// use PHPMailer\Exception;
-
-// require 'phpmailer/phpmailer/src/PHPMailer.php';
-
-
-$mail = new PHPMailer\PHPMailer\PHPMailer(true);
-
-$staff_email = "mclemadan@gmail.com"; //where the email is coming from
-$users_email = "mclemadan@gmail.com"; //where the email will go
-$email_subject = "Propaworks Order Confirmation";
-$transaction_code = generate_code();
-
-$email_body = '<h5>Reference Number:'.$transaction_code.'</h5>'.'<br>'.'Thank you for shopping at Propaworks!';
-
-try{
-	$mail->isSMTP();
-	$mail->Host = "smtp.gmail.com";
-	$mail->SMTPAuth = true;
-	$mail->Username = $staff_email;
-	$mail->Password = "johnmclem";
-	$mail->SMTPSecure = "tls";
-	$mail->Port = 587;
-	$mail->setFrom($staff_email, "Propaworks");
-	$mail->addAddress($users_email);
-	$mail->isHTML(true);
-	$mail->Subject = $email_subject;
-	$mail->Body = $email_body;
-	$mail->send();
-
-	echo "Thank you for shopping! Kindly check your email for further details about your order. Have a great day!"; //for testing purposes only, should be thrown to confirmation.php
-} catch (Exception $e){
-	echo "Message sending failed".''.$mail->ErrorInfo;
+<?php
+ob_start();
+if(!isset($_SESSION['email'])){
+echo "<script type='text/javascript'>location.href='login.php'</script>";
 }
+?>
 
- ?>
+<div class="container-fluid my-4">
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-10 text-center">
+			<!-- <h6>Order Reference Number: <?php //echo $_SESSION['trans_code']; ?></h6>
+			<?php //unset($_SESSION['trans_code']); ?> -->
+			<h6 class="mt-5">Thank you for shopping at Propaworks!</h6>
+			<!-- <a href="./catalog.php" class="btn btn-primary">Continue Shopping</a> -->
+		</div>
+	</div>
+</div>
 
 <!-- <?php
 //function generate_code() {

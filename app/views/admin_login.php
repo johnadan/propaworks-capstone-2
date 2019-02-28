@@ -21,8 +21,8 @@
 
                     <p id="error_message" name="errorMessage"></p>
                     
-    				<button id="btn_login" type="submit" class="btn bg-primary">Log In</button>
-    				<input class="btn btn-warning" type="reset" value="Clear">
+    				<button id="btn_login" type="submit" class="a_demo_two btn-shadow">Log In</button>
+    				<input class="a_demo_two btn-shadow" type="reset" value="Clear">
     			</form>
     		</div>
 

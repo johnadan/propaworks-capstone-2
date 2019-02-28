@@ -1,22 +1,40 @@
 <?php require_once "../partials/header.php" ?>
+<?php include "../partials/admin_navbar.php";?>
 
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
-			<form class="mt-3" action="item_add.php" method="POST"><h5>Add Catalog Product/Item</h5>
+			<form class="mt-3" action="../controllers/item_add.php" method="POST"><h5 class="mt-5 text-center" enctype="multipart/form-data">Add Catalog Product/Item</h5>
 			  <div class="form-group">
 			    <label for="exampleFormControlInput1">Name</label>
 			    <input type="text" class="form-control" id="item_name" name="product_name" placeholder="Product/Item Name">
 			  </div>
 			  <div class="form-group">
 			    <label for="ProductItemCategory">Product/Item Category</label>
-			    <select class="form-control" id="category_selection" name="category_selection">
+			    <select class="form-control" id="category_selection" name="category_id">
 			      <option value="1">Campus Tees</option>
-			      <option value="2">Collared Shirts</option>
-			      <option value="3">Hoodies and Raglans</option>
-			      <!-- <option>Lanyard</option> -->
-			      <option value="4">Artists, Bands, and others</option>
+			      <option value="2">Hoodies and Raglans</option>
+			      <option value="3">Artists, Bands, and others</option>
+			    </select>  
+			    
+			     <!-- <?php 
+					// $category_query = "SELECT * FROM tbl_categories";
+					$sql = "SELECT * FROM tbl_categories";
+				      $result = mysqli_query($conn,$sql);
+					// $categories = mysqli_query($conn, $category_query);
+					foreach ($result as $category) {
+						extract($category);
+						echo "<option value='$id'>$name</option>";	
+					}
+				 ?> -->
+			    
+			  </div>
+			  <div class="form-group">
+			  	<label for="featured_item">Featured Item</label>
+			  	<select class="form-control" id="featured_item" name="featured_item">
+			    	<option value="0">Yes</option>
+			    	<option value="1">No</option>
 			    </select>
 			  </div>
 			  <div class="form-group">
@@ -46,10 +64,13 @@
 			  </div> -->
 			  <!-- 7 -->
 			  <!-- <button type="submit" class="btn btn-primary mb-3">Submit</button> -->
-			  <form action="#">
-			  Image: <input type="file" name="myFile"><br><br>
-			  <input type="submit">
-			</form>
+			  <div class="form-group">
+			  	<label for="image"></label>
+			  	Image: <input type="file" name="myFile"><br><br>
+			  <input type="submit" class="a_demo_two btn-shadow">
+			  </div>
+			  <!-- <form action="#">
+					</form> -->
 			</form>
 		</div>
 	</div>

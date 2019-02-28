@@ -7,6 +7,9 @@ ob_start();
 if(!isset($_SESSION['email'])){
 echo "<script type='text/javascript'>location.href='login.php'</script>";
 }
+if(!isset($_SESSION['cart'])){
+echo "<script type='text/javascript'>location.href='catalog2.php'</script>";
+}
 ?>
 
 <h1 class="text-center mt-5 pt-5">Checkout</h1>

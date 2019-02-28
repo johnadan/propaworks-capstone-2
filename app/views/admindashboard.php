@@ -33,14 +33,15 @@
 				  							$row[description]
 				  						</p>	
 				  					</div>
-				  					<div class='card-footer'>
-				  						<button class='a_demo_two btn-shadow btn-block' id='removeFromCatalog' data-id='$row[id]'> Remove from Catalog</button>
-				  					</div>		
+				  						
 			      			</div>	
 			      		</div>";
 			      	}
 			      }
 			     ?>
+			     <!-- <div class='card-footer'>
+					<button class='a_demo_two btn-shadow' id='removeFromCatalog' data-id='$row[id]'> Remove from Catalog</button>
+				</div>	 -->
 			</div>
 		</div>
 	</div>	
