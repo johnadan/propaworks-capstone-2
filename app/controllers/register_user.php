@@ -6,8 +6,8 @@
 	$username = $_POST['uname'];
 	$address = $_POST['address'];
 	$email = $_POST['email'];
-	$password = $_POST['password'];
-	// $password = sha1($_POST['password']);
+	//$password = $_POST['password'];
+	$password = sha1($_POST['password']);
 
 	// $data = 
 
@@ -24,11 +24,13 @@
 		$data = "Sorry, email already exists. Please use a different email.";
 	}
 	else {
-		$sql2 = "INSERT INTO tbl_users (username,email,address,password)
+		// $sql2 = "INSERT INTO tbl_users (username,email,address,password)
+		$sql = "INSERT INTO tbl_users (username,email,address,password)
 		VALUES ('$username','$email','$address','$password')";
-		mysqli_query($conn,$sql2);
-		// $data = "You have successfully registered!";
-		header("Location: ../views/index.php");
+		// mysqli_query($conn,$sql2);
+		mysqli_query($conn,$sql);
+		$data = "You have successfully registered!";
+		//header("Location: ../views/index.php");
 	}
 	echo $data;
 	
