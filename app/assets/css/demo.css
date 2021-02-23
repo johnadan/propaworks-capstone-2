@@ -20,15 +20,19 @@
 .breadcrumb .breadcrumb-item:nth-child(2)::before {
   content: "|";
 }
+
 .breadcrumb .breadcrumb-item:nth-child(3)::before {
   content: "|";
 }
+
 .breadcrumb .breadcrumb-item:nth-child(4)::before {
   content: "|";
 }
+
 .breadcrumb .breadcrumb-item:nth-child(5)::before {
   content: "|";
 }
+
 .button {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

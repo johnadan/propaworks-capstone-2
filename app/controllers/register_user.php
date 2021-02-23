@@ -2,7 +2,7 @@
 
 <?php
 	require_once 'connect.php';
-	$userID = $_POST['id'];
+
 	$username = $_POST['uname'];
 	$address = $_POST['address'];
 	$email = $_POST['email'];

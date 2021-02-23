@@ -3,9 +3,10 @@
 <?php
 
 require_once 'connect.php'; 
-	$userID = $_POST['id'];
+	
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$isadmin = $_POST['is_admin'];
 	
 	$sql = "SELECT * FROM tbl_users WHERE email = '$email' AND password = '$password'";
 
@@ -15,8 +16,13 @@ require_once 'connect.php';
 		while($row = mysqli_fetch_assoc($result)){
 			$_SESSION['user-id'] = $row['id'];
 			$_SESSION['email'] = $row['email'];
+			$_SESSION['is_admin'] = $row['is_admin'];
+			if(is_admin == 0){
+		    echo "<script type='text/javascript'>location.href='../views/checkout.php'</script>"; 
+		} else {
+		    echo "<script type='text/javascript'>location.href='../views/add_item.php'</script>";
+		    }
 		}
-		echo "<script type='text/javascript'>location.href='../views/checkout.php'</script>"; 
 	}
 
 ?>

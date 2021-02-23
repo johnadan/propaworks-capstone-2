@@ -34,6 +34,3 @@ $ref_number //= '';
   //return $ref_number."-".$today[0];
 //}
 ?> -->
-
-
- 

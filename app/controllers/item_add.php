@@ -44,4 +44,3 @@ echo "Item successfully added!";
 	header("Location: ../views/admindashboard.php");
 
 ?>
-
